@@ -20,4 +20,5 @@
         completions."
     </string>
     <string name="title_activity_login">Sign in</string>
+    <string name="title_activity_crop_list">CropListActivity</string>
 </resources>

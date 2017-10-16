@@ -4,7 +4,6 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:fitsSystemWindows="true">
-
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -17,21 +16,23 @@
         <TextView
             android:id="@+id/appNameTextView"
             android:layout_width="337dp"
+            android:layout_height="20dp"
+            android:layout_weight="0.21"
             android:text="PDX Farm Share"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-            android:textColor="@color/colorPrimaryText"
+            android:textColor="@color/colorPrimaryDark"
             android:textColorHint="@color/colorSecondaryText"
-            android:textSize="20sp"
-            android:layout_weight="0.21"
-            android:layout_height="20dp" />
+            android:textColorLink="@color/colorSecondaryText"
+            android:textSize="20sp" />
 
         <!-- Name Label -->
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp">
+            android:layout_marginBottom="8dp"
+            >
             <EditText android:id="@+id/input_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -49,6 +50,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPostalAddress"
+                android:textColor="@color/icons"
                 android:hint="Address" />
         </android.support.design.widget.TextInputLayout>
 
@@ -64,6 +66,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
+                android:textColor="@color/icons"
                 android:hint="Email" />
         </android.support.design.widget.TextInputLayout>
 
@@ -78,6 +81,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
+                android:textColor="@color/icons"
                 android:hint="Mobile Number" />
         </android.support.design.widget.TextInputLayout>
 
@@ -91,6 +95,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
+                android:textColor="@color/icons"
                 android:hint="Password"/>
         </android.support.design.widget.TextInputLayout>
 
@@ -104,6 +109,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
+                android:textColor="@color/icons"
                 android:hint="Re-enter Password"/>
         </android.support.design.widget.TextInputLayout>
 

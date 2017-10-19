@@ -59,10 +59,10 @@ public class MainActivity extends AppCompatActivity
         });
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.bringToFront();
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                System.out.println("hey guys");
                 Intent intent = new Intent(MainActivity.this, CropListActivity.class);
                 startActivity(intent);
             }

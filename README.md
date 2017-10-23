@@ -12,11 +12,12 @@ _The PDX Farm Share Android application is a social media application that conne
 
 ## Setup/Installation Requirements
 
-* _This is a great place_
-* _to list setup instructions_
-* _in a simple_
-* _easy-to-understand_
-* _format_
+* _You will need to have the [Java SDK (Standard Edition Development Kit)](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) & [Java SDK (Standard Edition Development Kit)](https://www.java.com/en/) installed on your computer_
+* _Next you will need to Install [Android Studio](https://developer.android.com/studio/index.html)_
+* _Clone this repository and open with Android Studio_
+* _It should automatically build Gradle on opening and again when you click the play button or select run in one of many locations_
+* _Next you will need to choose your emulator or hook up your android phone in developer mode. I used Nexus 6 and Nexus 5X emulators (be aware that this will dramatically slow your computer <unless you are operating with 16 GB RAM or more>)_
+*_Once the app loads, you should be able to navigate freely_
 
 _{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this app depends on?}_
 

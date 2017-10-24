@@ -1,5 +1,6 @@
 package com.epicodus.pdxfarmshare;
 
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -10,6 +11,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import com.google.android.gms.maps.MapFragment;
+
+import static com.epicodus.pdxfarmshare.R.id.map;
 
 public class CropListActivity extends AppCompatActivity {
     private String[] crops = new String[] {"kale", "beets", "rosemary", "lavender", "peaches", "cherries", "apples", "chard", "blackberries"};
@@ -28,14 +33,14 @@ public class CropListActivity extends AppCompatActivity {
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(CropListActivity.this, MapsActivity.class);
-                Log.d("Heya", intent+"");
-                startActivity(intent);
-        }
-    });
+        fab.setOnClickListener(new View.OnClickListener()  {
+                @Override
+                public void onClick(View v) {
+                    MapFragment mapFragment = (MapFragment) getFragmentManager()
+                            .findFragmentById(R.id.map);
+                    mapFragment.getMapAsync(this);
+                }
+        });
 
     }
 

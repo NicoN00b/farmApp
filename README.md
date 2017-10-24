@@ -17,21 +17,21 @@ _The PDX Farm Share Android application is a social media application that conne
 * _Clone this repository and open with Android Studio_
 * _It should automatically build Gradle on opening and again when you click the play button or select run in one of many locations_
 * _Next you will need to choose your emulator or hook up your android phone in developer mode. I used Nexus 6 and Nexus 5X emulators (be aware that this will dramatically slow your computer <unless you are operating with 16 GB RAM or more>)_
-*_Once the app loads, you should be able to navigate freely_
+* _Once the app loads, you should be able to navigate freely_
 
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this app depends on?}_
+_There are quite a few gaps in the functionality that will follow data persistence._
 
 ## Known Bugs
 
-_{Are there issues that have not yet been resolved that you want to let users know you know?  Outline any issues that would impact use of your application.  Share any workarounds that are in place. }_
+_Without all the firebase date persistence in place, a lot of the app does nothing.  Additionally, I am struggling with my Google Map Fragment._
 
 ## Support and contact details
 
-_{Let people know what to do if they run into any issues or have questions, ideas or concerns.  Encourage them to contact you or make a contribution to the code.}_
+__
 
 ## Technologies Used
 
-_{Tell me about the languages and tools you used to create this app. Assume that I know you probably used HTML and CSS. If you did something really cool using only HTML, point that out.}_
+_This app utilizes Java language, Xml views, the android studio ide, Gradle dependencies, etc._
 
 ### License
 

@@ -28,7 +28,7 @@
         android:layout_height="54dp"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_map"
-        android:background="@color/colorPrimaryLight"/>
+        app:backgroundTint="@color/colorPrimaryDark"
+        app:srcCompat="@android:drawable/ic_dialog_map" />
 
 </android.support.design.widget.CoordinatorLayout>

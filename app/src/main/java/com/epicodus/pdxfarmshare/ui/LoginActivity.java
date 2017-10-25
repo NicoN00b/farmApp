@@ -1,4 +1,4 @@
-package com.epicodus.pdxfarmshare;
+package com.epicodus.pdxfarmshare.ui;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -29,6 +29,8 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.epicodus.pdxfarmshare.R;
 
 import java.util.ArrayList;
 import java.util.List;

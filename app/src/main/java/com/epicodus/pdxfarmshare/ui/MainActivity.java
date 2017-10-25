@@ -1,12 +1,9 @@
-package com.epicodus.pdxfarmshare;
+package com.epicodus.pdxfarmshare.ui;
 
-import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -18,10 +15,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.GooglePlayServicesUtil;
+import com.epicodus.pdxfarmshare.R;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -69,7 +64,7 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, CropListActivity.class);
+                Intent intent = new Intent(MainActivity.this, MapsActivity.class);
                 startActivity(intent);
             }
         });

@@ -1,4 +1,4 @@
-package com.epicodus.pdxfarmshare;
+package com.epicodus.pdxfarmshare.ui;
 
 
 import android.graphics.Typeface;
@@ -14,6 +14,8 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.util.Log;
 import android.widget.Toast;
+
+import com.epicodus.pdxfarmshare.R;
 
 import butterknife.ButterKnife;
 import butterknife.Bind;

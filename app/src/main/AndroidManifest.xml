@@ -29,7 +29,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -39,15 +39,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SignUpActivity"
+            android:name=".ui.SignUpActivity"
             android:label="@string/title_activity_sign_up" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".ui.LoginActivity"
             android:label="@string/title_activity_login" />
-        <activity
-            android:name=".CropListActivity"
-            android:label="@string/title_activity_crop_list"
-            android:theme="@style/AppTheme.NoActionBar" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -61,7 +57,7 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".fragments.MapFragment"
+            android:name=".ui.MapsActivity"
             android:label="@string/title_activity_maps"></activity>
     </application>
 

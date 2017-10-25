@@ -1,8 +1,9 @@
-package com.epicodus.pdxfarmshare;
+package com.epicodus.pdxfarmshare.fragments;
 
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 
+import com.epicodus.pdxfarmshare.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -10,7 +11,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+public class MapFragment extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
 
@@ -39,8 +40,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        LatLng oregon = new LatLng(45, -122);
+        mMap.addMarker(new MarkerOptions().position(oregon).title("Marker in Oregon"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(oregon));
     }
 }

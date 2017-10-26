@@ -15,15 +15,20 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     private GoogleMap mMap;
 
+//    GeoJsonActivity layer = new GeoJsonActivity(getMap(), geoJsonData);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
+        setUpMap();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        setUpMap();
+    }
 
     /**
      * Manipulates the map once available.
@@ -38,9 +43,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
         LatLng oregon = new LatLng(45.3, -122);
         mMap.addMarker(new MarkerOptions().position(oregon).title("Marker in Oregon"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(oregon));
+    }
+
+    private void setUpMap() {
+        ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map)).getMapAsync(this);
+    }
+
+    protected GoogleMap getMap() {
+        return mMap;
     }
 }

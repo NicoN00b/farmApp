@@ -11,11 +11,13 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import static com.epicodus.pdxfarmshare.R.id.map;
+
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
 
-//    GeoJsonActivity layer = new GeoJsonActivity(getMap(), geoJsonData);
+//    GeoJsonActivity layer = new GeoJsonActivity(map, R.raw.geoJsonFile, context);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +51,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
     private void setUpMap() {
-        ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map)).getMapAsync(this);
+        ((SupportMapFragment) getSupportFragmentManager().findFragmentById(map)).getMapAsync(this);
     }
 
     protected GoogleMap getMap() {

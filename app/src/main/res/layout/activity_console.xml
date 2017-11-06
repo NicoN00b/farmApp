@@ -6,18 +6,19 @@
     android:layout_height="match_parent"
     tools:context="com.epicodus.pdxfarmshare.ConsoleActivity">
 
-    <EditText
+    <TextView
         android:id="@+id/weatherTextView"
         android:layout_width="394dp"
         android:layout_height="60dp"
         android:layout_marginLeft="8dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
+        android:maxLines="2"
         app:layout_constraintBottom_toTopOf="@+id/list_item"
         app:layout_constraintLeft_toLeftOf="parent"
         tools:layout_editor_absoluteX="-15dp"
-        tools:layout_editor_absoluteY="-17dp" />
+        tools:layout_editor_absoluteY="-17dp"
+        android:layout_alignRight="@+id/list_item"
+        android:layout_alignEnd="@+id/list_item" />
 
     <ListView
         android:id="@+id/list_item"

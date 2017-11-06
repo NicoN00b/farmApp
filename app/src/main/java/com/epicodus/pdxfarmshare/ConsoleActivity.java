@@ -33,6 +33,7 @@ public class ConsoleActivity extends AppCompatActivity {
 
     private static final String TAG = ConsoleActivity.class.getSimpleName();
 
+
     @Bind(R.id.weatherTextView) TextView mWeatherTextView;
 
 
@@ -43,17 +44,6 @@ public class ConsoleActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         getWeather();
-
-        Intent intent = getIntent();
-        String city = intent.getStringExtra("city");
-        String temp = intent.getStringExtra("temp");
-        String description = intent.getStringExtra("description");
-
-        mWeatherTextView.setText("The current temperature in " + city + " is " + temp + "°F, with " + description);
-
-
-
-
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.floatingActionButton);
@@ -77,10 +67,19 @@ public class ConsoleActivity extends AppCompatActivity {
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
-
-               weatherService.processResults(response);
-
+                final String outputFromAsync = weatherService.processResults(response);
+                ConsoleActivity.this.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        mWeatherTextView
+                                .setText(outputFromAsync);
+                    }
+                });
             }
+
         });
+
+
     }
+
 }

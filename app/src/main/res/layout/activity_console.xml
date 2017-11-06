@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.epicodus.pdxfarmshare.ConsoleActivity">
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="97dp"
+        android:layout_height="63dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="@id/list_item"
+        app:backgroundTint="@color/colorPrimary"
+        app:fabSize="mini"
+        app:srcCompat="@android:drawable/ic_input_add"
+        tools:layout_editor_absoluteX="305dp"
+        tools:layout_editor_absoluteY="409dp"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/weatherTextView"
+        android:layout_width="394dp"
+        android:layout_height="60dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        tools:layout_editor_absoluteY="-17dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        tools:layout_editor_absoluteX="-15dp" />
+
+    <ListView
+        android:id="@+id/list_item"
+        android:layout_width="380dp"
+        android:layout_height="387dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="41dp"
+        app:layout_constraintBottom_toBottomOf="@+id/weatherTextView"/>
+
+</android.support.constraint.ConstraintLayout>

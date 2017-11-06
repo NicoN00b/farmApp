@@ -1,22 +1,23 @@
 package com.epicodus.pdxfarmshare.models;
 
-/**
- * Created by rev.j.p.rinehart on 10/25/2017.
- */
+import org.parceler.Parcel;
 
+import java.util.ArrayList;
+
+@Parcel
 public class Item {
-    private int id;
-    private int userId;
-    private String name;
-    private String location;
-    private boolean pub = false;
-    private String description;
-    private boolean barter = false;
 
-    private String type;
+     String name;
+     String location;
+     boolean pub = false;
+     String description;
+     boolean barter = false;
+     String type;
+     private String pushId;
 
-    public Item (int userId, String name, String location, boolean pub, String description, boolean barter){
-        this.userId = userId;
+    public Item() {}
+
+    public Item (String name, String location, boolean pub, String description, boolean barter){
         this.name = name;
         this.location = location;
         this.pub = pub;
@@ -24,29 +25,6 @@ public class Item {
         this.barter = barter;
     }
 
-    public Item (String name, String location, boolean pub, String description){
-        this.name = name;
-        this.location = location;
-        this.pub = pub;
-        this.description = description;
-    }
-
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
 
     public String getName() {
         return name;
@@ -86,5 +64,13 @@ public class Item {
 
     public void setBarter(boolean barter) {
         this.barter = barter;
+    }
+
+    public String getPushId() {
+        return pushId;
+    }
+
+    public void setPushId(String pushId) {
+        this.pushId = pushId;
     }
 }

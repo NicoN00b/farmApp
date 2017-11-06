@@ -17,8 +17,7 @@
         app:fabSize="mini"
         app:srcCompat="@android:drawable/ic_input_add"
         tools:layout_editor_absoluteX="305dp"
-        tools:layout_editor_absoluteY="409dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="409dp" />
 
     <EditText
         android:id="@+id/weatherTextView"

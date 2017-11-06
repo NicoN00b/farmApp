@@ -9,15 +9,15 @@ public class Item {
 
      String name;
      String location;
-     boolean pub = false;
+     String pub;
      String description;
-     boolean barter = false;
+     String barter;
      String type;
      private String pushId;
 
     public Item() {}
 
-    public Item (String name, String location, boolean pub, String description, boolean barter){
+    public Item (String name, String location, String pub, String description, String barter){
         this.name = name;
         this.location = location;
         this.pub = pub;
@@ -42,13 +42,6 @@ public class Item {
         this.location = location;
     }
 
-    public boolean isPub() {
-        return pub;
-    }
-
-    public void setPub(boolean pub) {
-        this.pub = pub;
-    }
 
     public String getDescription() {
         return description;
@@ -58,11 +51,19 @@ public class Item {
         this.description = description;
     }
 
-    public boolean isBarter() {
+    public String getPub() {
+        return pub;
+    }
+
+    public void setPub(String pub) {
+        this.pub = pub;
+    }
+
+    public String getBarter() {
         return barter;
     }
 
-    public void setBarter(boolean barter) {
+    public void setBarter(String barter) {
         this.barter = barter;
     }
 

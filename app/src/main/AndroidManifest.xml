@@ -64,7 +64,8 @@
             android:value="@integer/google_play_services_version" />
 
         <activity android:name=".ui.ItemsActivity" />
-        <activity android:name=".ConsoleActivity"></activity>
+        <activity android:name=".ConsoleActivity" />
+        <activity android:name=".ui.CreateItemActivity"></activity>
     </application>
 
 </manifest>

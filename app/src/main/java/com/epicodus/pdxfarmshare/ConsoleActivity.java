@@ -1,14 +1,19 @@
 package com.epicodus.pdxfarmshare;
 
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.epicodus.pdxfarmshare.models.Weather;
+import com.epicodus.pdxfarmshare.ui.CreateItemActivity;
+import com.epicodus.pdxfarmshare.ui.MainActivity;
+import com.epicodus.pdxfarmshare.ui.MapsActivity;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -23,7 +28,7 @@ public class ConsoleActivity extends AppCompatActivity {
 
     private static final String TAG = ConsoleActivity.class.getSimpleName();
 
-    @Bind(R.id.weatherTextView) TextView mWeatherTextView;
+//    @Bind(R.id.weatherTextView) TextView mWeatherTextView;
 
 
     @Override
@@ -32,14 +37,23 @@ public class ConsoleActivity extends AppCompatActivity {
         setContentView(R.layout.activity_console);
         ButterKnife.bind(this);
 
-        Intent intent = getIntent();
-        String city = intent.getStringExtra("city");
-        String temp = intent.getStringExtra("temp");
-        String description = intent.getStringExtra("description");
+//        Intent intent = getIntent();
+//        String city = intent.getStringExtra("city");
+//        String temp = intent.getStringExtra("temp");
+//        String description = intent.getStringExtra("description");
+//
+//        mWeatherTextView.setText("The current temperature in " + city + " is " + temp + "Fahrenheit, with " + description);
+//
+//        getWeather();
 
-        mWeatherTextView.setText("The current temperature in " + city + " is " + temp + "Fahrenheit, with " + description);
-
-        getWeather();
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.floatingActionButton);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ConsoleActivity.this, CreateItemActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 

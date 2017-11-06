@@ -7,7 +7,6 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_sign_up">Sign in</string>
 
-    <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password (optional)</string>
     <string name="action_sign_in">Sign in or register</string>
@@ -22,7 +21,10 @@
     <string name="title_activity_login">Sign in</string>
     <string name="title_activity_crop_list">CropListActivity</string>
     <string name="title_activity_maps">Map</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="any_useful_info_here">Any useful info here</string>
+    <string name="public_prompt">Is it publicly accessible?</string>
+    <string name="barter_prompt">Would you like to barter?</string>
+    <string name="add_item">Add Item</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
 </resources>

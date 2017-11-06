@@ -2,6 +2,7 @@ package com.epicodus.pdxfarmshare;
 
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,6 +16,8 @@ import com.epicodus.pdxfarmshare.ui.CreateItemActivity;
 import com.epicodus.pdxfarmshare.ui.MainActivity;
 import com.epicodus.pdxfarmshare.ui.MapsActivity;
 
+import org.parceler.Parcels;
+
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -24,11 +27,13 @@ import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
 
+import static com.epicodus.pdxfarmshare.WeatherService.findWeather;
+
 public class ConsoleActivity extends AppCompatActivity {
 
     private static final String TAG = ConsoleActivity.class.getSimpleName();
 
-//    @Bind(R.id.weatherTextView) TextView mWeatherTextView;
+    @Bind(R.id.weatherTextView) TextView mWeatherTextView;
 
 
     @Override
@@ -37,14 +42,19 @@ public class ConsoleActivity extends AppCompatActivity {
         setContentView(R.layout.activity_console);
         ButterKnife.bind(this);
 
-//        Intent intent = getIntent();
-//        String city = intent.getStringExtra("city");
-//        String temp = intent.getStringExtra("temp");
-//        String description = intent.getStringExtra("description");
-//
-//        mWeatherTextView.setText("The current temperature in " + city + " is " + temp + "Fahrenheit, with " + description);
-//
-//        getWeather();
+        getWeather();
+
+        Intent intent = getIntent();
+        String city = intent.getStringExtra("city");
+        String temp = intent.getStringExtra("temp");
+        String description = intent.getStringExtra("description");
+
+        mWeatherTextView.setText("The current temperature in " + city + " is " + temp + "°F, with " + description);
+
+
+
+
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.floatingActionButton);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -59,7 +69,7 @@ public class ConsoleActivity extends AppCompatActivity {
 
     private void getWeather(){
         final WeatherService weatherService = new WeatherService();
-        weatherService.findWeather(new Callback() {
+        findWeather(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
                 e.printStackTrace();
@@ -67,15 +77,9 @@ public class ConsoleActivity extends AppCompatActivity {
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
-                try {
-                    String jsonData = response.body().string();
-                    if (response.isSuccessful()) {
-                        Log.v(TAG, jsonData);
-                        weatherService.processResults(response);
-                    }
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+
+               weatherService.processResults(response);
+
             }
         });
     }

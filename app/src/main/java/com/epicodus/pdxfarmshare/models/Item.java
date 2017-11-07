@@ -13,15 +13,15 @@ public class Item {
      String description;
      String barter;
      String type;
-     private String pushId;
+     String pushId;
 
     public Item() {}
 
-    public Item (String name, String location, String pub, String description, String barter){
+    public Item (String name, String location, String description, String pub, String barter){
         this.name = name;
         this.location = location;
-        this.pub = pub;
         this.description = description;
+        this.pub = pub;
         this.barter = barter;
     }
 

@@ -16,6 +16,7 @@ import com.epicodus.pdxfarmshare.Constants;
 import com.epicodus.pdxfarmshare.R;
 import com.epicodus.pdxfarmshare.models.Item;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -48,6 +49,7 @@ public class CreateItemActivity extends AppCompatActivity{
         setContentView(R.layout.activity_create_item);
         ButterKnife.bind(this);
 
+
         mAuth = FirebaseAuth.getInstance();
 
         addItemButton.setOnClickListener(new View.OnClickListener() {
@@ -67,8 +69,6 @@ public class CreateItemActivity extends AppCompatActivity{
         progressDialog.setMessage("Adding Item...");
         progressDialog.show();
 
-        mDatabase = FirebaseDatabase.getInstance().getReference();
-
         mName =itemText.getText().toString();
 
         mAddress =locationText.getText().toString();
@@ -77,8 +77,16 @@ public class CreateItemActivity extends AppCompatActivity{
 
         Item item = new Item(mName, mAddress, mDescription, mPublic, mBarter);
 
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String uid = user.getUid();
 
-        mDatabase.child("items").setValue(item);
+        mDatabase = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_ITEMS).child(uid);
+
+        DatabaseReference pushRef = mDatabase.push();
+        String pushId = pushRef.getKey();
+        item.setPushId(pushId);
+        pushRef.setValue(item);
+//        mDatabase.child("items").setValue(item);
 
     }
 

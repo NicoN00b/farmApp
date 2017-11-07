@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import com.epicodus.pdxfarmshare.R;
 import com.epicodus.pdxfarmshare.adapters.ItemListAdapter;
 import com.epicodus.pdxfarmshare.models.Item;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
@@ -38,6 +39,8 @@ public class ItemsActivity extends AppCompatActivity {
     }
 
     private void getItems(String location) {
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference ref = database.getReference();
 
 
             @Override

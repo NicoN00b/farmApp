@@ -13,23 +13,28 @@
         android:layout_marginLeft="8dp"
         android:ems="10"
         android:maxLines="2"
-        app:layout_constraintBottom_toTopOf="@+id/list_item"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
         app:layout_constraintLeft_toLeftOf="parent"
         tools:layout_editor_absoluteX="-15dp"
         tools:layout_editor_absoluteY="-17dp"
-        android:layout_alignRight="@+id/list_item"
-        android:layout_alignEnd="@+id/list_item" />
+        android:layout_alignRight="@+id/recyclerView"
+        android:layout_alignEnd="@+id/recyclerView" />
 
-    <ListView
-        android:id="@+id/list_item"
-        android:layout_width="380dp"
-        android:layout_height="387dp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="-343dp"
-        android:layout_above="@+id/floatingActionButton"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="16dp" />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <!--<ListView-->
+        <!--android:id="@+id/list_item"-->
+        <!--android:layout_width="380dp"-->
+        <!--android:layout_height="387dp"-->
+        <!--tools:layout_editor_absoluteX="16dp"-->
+        <!--tools:layout_editor_absoluteY="-343dp"-->
+        <!--android:layout_above="@+id/floatingActionButton"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:layout_marginBottom="16dp" />-->
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/floatingActionButton"
@@ -40,14 +45,14 @@
         app:backgroundTint="@color/colorPrimary"
         app:fabSize="mini"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/list_item"
-        app:layout_constraintRight_toRightOf="@+id/list_item"
+        app:layout_constraintLeft_toRightOf="@+id/recyclerView"
+        app:layout_constraintRight_toRightOf="@+id/recyclerView"
         app:layout_constraintStart_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/list_item"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView"
         app:srcCompat="@android:drawable/ic_input_add"
         android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/list_item"
-        android:layout_alignEnd="@+id/list_item"
+        android:layout_alignRight="@+id/recyclerView"
+        android:layout_alignEnd="@+id/recyclerView"
         android:layout_marginRight="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="22dp" />

@@ -20,13 +20,12 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 
-public class ItemDetailFragment extends Fragment implements View.OnClickListener {
+public class ItemDetailFragment extends android.support.v4.app.Fragment implements View.OnClickListener {
     private static final int MAX_WIDTH = 400;
     private static final int MAX_HEIGHT = 300;
 
     @Bind(R.id.itemImageView) ImageView mImageLabel;
-    @Bind(R.id.itemNameTextView)
-    TextView mNameLabel;
+    @Bind(R.id.itemNameTextView) TextView mNameLabel;
 //    @Bind(R.id.phoneTextView) TextView mPhoneLabel;
 //    @Bind(R.id.addressTextView) TextView mAddressLabel;
 //    @Bind(R.id.saveItemButton) TextView mSaveItemButton;

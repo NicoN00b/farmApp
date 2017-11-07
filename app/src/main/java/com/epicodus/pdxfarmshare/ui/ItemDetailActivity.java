@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 
 
 import com.epicodus.pdxfarmshare.R;
+import com.epicodus.pdxfarmshare.adapters.ItemPagerAdapter;
 import com.epicodus.pdxfarmshare.models.Item;
 
 import org.parceler.Parcels;
@@ -17,7 +18,8 @@ import butterknife.ButterKnife;
 
 
 public class ItemDetailActivity extends AppCompatActivity {
-
+    @Bind(R.id.viewPager) ViewPager mViewPager;
+    private ItemPagerAdapter adapterViewPager;
     ArrayList<Item> mItems = new ArrayList<>();
 
 
@@ -30,6 +32,10 @@ public class ItemDetailActivity extends AppCompatActivity {
         mItems = Parcels.unwrap(getIntent().getParcelableExtra("items"));
 
         int startingPosition = Integer.parseInt(getIntent().getStringExtra("position"));
+
+        adapterViewPager = new ItemPagerAdapter(getSupportFragmentManager(), mItems);
+        mViewPager.setAdapter(adapterViewPager);
+        mViewPager.setCurrentItem(startingPosition);
 
     }
 }

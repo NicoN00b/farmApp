@@ -56,7 +56,7 @@ public class WeatherService {
                 temp = weatherJSON.getJSONObject("main").getDouble("temp");
                 detail = weatherJSON.getJSONArray("weather").getJSONObject(0).getString("description");
                 Log.v(TAG, city);
-                weatherNow = "The current temperature in " + city + " is " + temp + " ° F, with " +  detail + ".";
+                weatherNow = "The current temperature in " + city + " is " + temp + "° F, with " +  detail + ".";
                 Log.v(TAG, weatherNow);
             }
         } catch (IOException | JSONException e) {

@@ -1,10 +1,13 @@
 package com.epicodus.pdxfarmshare.ui;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
 
+import com.epicodus.pdxfarmshare.Constants;
 import com.epicodus.pdxfarmshare.R;
 import com.epicodus.pdxfarmshare.adapters.ItemPagerAdapter;
 import com.epicodus.pdxfarmshare.models.Item;
@@ -23,11 +26,13 @@ public class ItemDetailActivity extends AppCompatActivity {
     ArrayList<Item> mItems = new ArrayList<>();
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_detail);
         ButterKnife.bind(this);
+
 
         mItems = Parcels.unwrap(getIntent().getParcelableExtra("items"));
 
@@ -38,4 +43,6 @@ public class ItemDetailActivity extends AppCompatActivity {
         mViewPager.setCurrentItem(startingPosition);
 
     }
+
+
 }

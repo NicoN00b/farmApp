@@ -44,6 +44,7 @@ public class CreateItemActivity extends AppCompatActivity{
     private String mPublic;
     private String mBarter;
     private String pushId;
+    private ProgressDialog mProgressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +58,7 @@ public class CreateItemActivity extends AppCompatActivity{
         addItemButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                createProgressDialog();
                 addItem();
                 Intent intent = new Intent(CreateItemActivity.this, ConsoleActivity.class);
                 startActivity(intent);
@@ -68,12 +70,6 @@ public class CreateItemActivity extends AppCompatActivity{
 
     public void addItem() {
         Log.d(TAG, "New Item");
-
-        final ProgressDialog progressDialog = new ProgressDialog(CreateItemActivity.this);
-        progressDialog.setIndeterminate(true);
-        progressDialog.setMessage("Adding Item...");
-        progressDialog.show();
-
         mName =itemText.getText().toString();
 
         mAddress =locationText.getText().toString();
@@ -91,8 +87,16 @@ public class CreateItemActivity extends AppCompatActivity{
         String pushId = pushRef.getKey();
         item.setPushId(pushId);
         pushRef.setValue(item);
+
 //        mDatabase.child("items").setValue(item);
 
+    }
+
+    private void createProgressDialog() {
+        mProgressDialog = new ProgressDialog(this);
+        mProgressDialog.setTitle("Loading...");
+        mProgressDialog.setMessage("Adding Item...");
+        mProgressDialog.setCancelable(false);
     }
 
     public void onRadioButtonClicked(View view) {

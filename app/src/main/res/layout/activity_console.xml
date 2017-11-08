@@ -25,16 +25,6 @@
         android:scrollbars="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
-    <!--<ListView-->
-        <!--android:id="@+id/list_item"-->
-        <!--android:layout_width="380dp"-->
-        <!--android:layout_height="387dp"-->
-        <!--tools:layout_editor_absoluteX="16dp"-->
-        <!--tools:layout_editor_absoluteY="-343dp"-->
-        <!--android:layout_above="@+id/floatingActionButton"-->
-        <!--android:layout_alignParentLeft="true"-->
-        <!--android:layout_alignParentStart="true"-->
-        <!--android:layout_marginBottom="16dp" />-->
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/floatingActionButton"

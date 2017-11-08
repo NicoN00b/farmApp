@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ListAdapter;
 import android.widget.TextView;
 
 import com.epicodus.pdxfarmshare.R;
@@ -26,6 +27,7 @@ import butterknife.ButterKnife;
 public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ItemViewHolder> {
     private static final int MAX_WIDTH = 200;
     private static final int MAX_HEIGHT = 200;
+
 
     private ArrayList<Item> mItems = new ArrayList<>();
     private Context mContext;

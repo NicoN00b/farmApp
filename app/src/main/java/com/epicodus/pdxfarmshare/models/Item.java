@@ -7,13 +7,16 @@ import java.util.ArrayList;
 @Parcel
 public class Item {
 
-     String name;
-     String location;
-     String pub;
-     String description;
-     String barter;
-     String type;
-     String pushId;
+    String name;
+    String location;
+    String pub;
+    String description;
+    String barter;
+    String type;
+    String pushId;
+
+
+    String favorite;
 
     public Item() {}
 
@@ -73,5 +76,14 @@ public class Item {
 
     public void setPushId(String pushId) {
         this.pushId = pushId;
+    }
+
+
+    public String getFavorite() {
+        return favorite;
+    }
+
+    public void setFavorite(String favorite) {
+        this.favorite = favorite;
     }
 }

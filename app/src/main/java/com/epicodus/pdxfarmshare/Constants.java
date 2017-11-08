@@ -9,4 +9,6 @@ public final class Constants {
     public static final String WE_API_BASE_URL = "http://api.openweathermap.org/data/2.5/weather?zip=97203,us&units=imperial";
     public static final String API_KEY_QUERY_PARAM = "appid";
     public static final String FIREBASE_CHILD_ITEMS = "items";
+    public static final String PREFERENCES_FAVORITE_KEY = "pushId";
+
 }

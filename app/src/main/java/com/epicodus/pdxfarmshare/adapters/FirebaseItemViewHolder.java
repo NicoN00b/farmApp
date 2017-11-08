@@ -1,5 +1,6 @@
 package com.epicodus.pdxfarmshare.adapters;
 
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
@@ -46,11 +47,13 @@ public class FirebaseItemViewHolder extends RecyclerView.ViewHolder implements V
         TextView descriptionTextView = (TextView) mView.findViewById(R.id.descriptionTextView);
 
         nameTextView.setText(item.getName());
+        locationTextView.setText(item.getLocation());
+        descriptionTextView.setText(item.getDescription());
 
     }
 
     @Override
-    public void onClick(View view) {
+    public void onClick(final View view) {
         final ArrayList<Item> items = new ArrayList<>();
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_ITEMS);
         ref.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -60,13 +63,20 @@ public class FirebaseItemViewHolder extends RecyclerView.ViewHolder implements V
                     items.add(snapshot.getValue(Item.class));
                 }
 
-                int itemPosition = getLayoutPosition();
+                try {
 
-                Intent intent = new Intent(mContext, ItemDetailActivity.class);
-                intent.putExtra("position", itemPosition + "");
-                intent.putExtra("items", Parcels.wrap(items));
+                    int itemPosition = getLayoutPosition();
 
-                mContext.startActivity(intent);
+
+                    Intent intent = new Intent(mContext, ItemDetailActivity.class);
+                    intent.putExtra("position", itemPosition + "");
+                    intent.putExtra("items", Parcels.wrap(items));
+
+                    mContext.startActivity(intent);
+
+                } catch ( ActivityNotFoundException e) {
+                     e.printStackTrace();
+                }
             }
 
             @Override

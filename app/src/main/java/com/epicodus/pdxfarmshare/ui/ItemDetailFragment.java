@@ -43,7 +43,8 @@ public class ItemDetailFragment extends android.support.v4.app.Fragment implemen
     @Bind(R.id.descriptionTextView) TextView mDescriptionLabel;
     @Bind(R.id.locationTextView) TextView mLocationLabel;
     @Bind(R.id.saveItemButton) Button mSaveItemButton;
-    private SharedPreferences mSharedPreferences;
+    @Bind(R.id.messageButton) Button mSendMessageButton;
+    SharedPreferences mSharedPreferences;
     private  SharedPreferences.Editor mEditor;
 
 
@@ -98,10 +99,12 @@ public class ItemDetailFragment extends android.support.v4.app.Fragment implemen
         mDescriptionLabel.setText(mItem.getDescription());
         mLocationLabel.setText(mItem.getLocation());
         mSaveItemButton.findViewById(R.id.saveItemButton);
+        mSendMessageButton.findViewById(R.id.messageButton);
 //
 //        mPhoneLabel.setOnClickListener(this);
         mLocationLabel.setOnClickListener(this);
         mSaveItemButton.setOnClickListener(this);
+        mSendMessageButton.setOnClickListener(this);
 
 
         return view;
@@ -120,6 +123,18 @@ public class ItemDetailFragment extends android.support.v4.app.Fragment implemen
             Intent mapIntent = new Intent(Intent.ACTION_VIEW,
                     Uri.parse("geo:0,0?q=(" + mItem.getLocation() + ")"));
             startActivity(mapIntent);
+        }
+
+        if (v == mSendMessageButton) {
+            Intent i = new Intent(Intent.ACTION_SEND);
+            i.setData(Uri.parse("email"));
+            String[] s = {"abc@gmail.com","xyz@gmail.com"};
+            i.putExtra(Intent.EXTRA_EMAIL, s);
+            i.putExtra(Intent.EXTRA_SUBJECT, "This is a subject");
+            i.putExtra(Intent.EXTRA_TEXT, "Here is the body of an Email");
+            i.setType("message/rfc822");
+            Intent chooser = Intent.createChooser(i, "Launch Email");
+            startActivity(chooser);
         }
 
         if (v == mSaveItemButton) {

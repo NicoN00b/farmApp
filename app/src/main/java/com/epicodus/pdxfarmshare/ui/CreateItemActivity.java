@@ -1,13 +1,26 @@
 package com.epicodus.pdxfarmshare.ui;
 
+import android.Manifest;
+import android.annotation.TargetApi;
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.os.Build;
+import android.provider.MediaStore;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
@@ -17,10 +30,13 @@ import com.epicodus.pdxfarmshare.ConsoleActivity;
 import com.epicodus.pdxfarmshare.Constants;
 import com.epicodus.pdxfarmshare.R;
 import com.epicodus.pdxfarmshare.models.Item;
+import com.epicodus.pdxfarmshare.models.Utility;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.io.IOException;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -34,17 +50,22 @@ public class CreateItemActivity extends AppCompatActivity{
     @Bind(R.id.public_radio) RadioGroup publicChoice;
     @Bind(R.id.barter_radio) RadioGroup barterChoice;
     @Bind(R.id.btn_addItem) Button addItemButton;
+    @Bind(R.id.itemImageView) ImageView mImage;
 
-    private FirebaseAuth mAuth;
+    FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
-    private DatabaseReference mDatabase;
-    private String mName;
-    private String mAddress;
-    private String mDescription;
+    DatabaseReference mDatabase;
+    String mName;
+    String mAddress;
+    String mDescription;
     private String mPublic;
     private String mBarter;
     private String pushId;
-    private ProgressDialog mProgressDialog;
+    ProgressDialog mProgressDialog;
+
+    int REQUEST_CAMERA = 0, SELECT_FILE = 1;
+    Button btnSelect;
+    private String userTask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +86,7 @@ public class CreateItemActivity extends AppCompatActivity{
                 finish();
             }
         });
+        
     }
 
 

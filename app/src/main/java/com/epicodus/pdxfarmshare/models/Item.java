@@ -14,6 +14,7 @@ public class Item {
     String barter;
     String type;
     String pushId;
+    String mImage;
 
 
     String favorite;
@@ -78,7 +79,6 @@ public class Item {
         this.pushId = pushId;
     }
 
-
     public String getFavorite() {
         return favorite;
     }
@@ -86,4 +86,14 @@ public class Item {
     public void setFavorite(String favorite) {
         this.favorite = favorite;
     }
+
+
+    public String getmImage() {
+        return mImage;
+    }
+
+    public void setmImage(String mImage) {
+        this.mImage = mImage;
+    }
+
 }

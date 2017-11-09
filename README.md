@@ -6,7 +6,7 @@
 
 ## Description
 
-_"Progress should mean growing competence in self-care rather than growing dependence." -Dr. Ivan Illich, Tools for Conviviality _
+_"Progress should mean growing competence in self-care rather than growing dependence." -Dr. Ivan Illich, Tools for Conviviality_
 
 _The PDX Farm Share Android application is a social media application that connects users to a platform for sharing and bartering food and other usable plants in Portland.  The app relies on the native features of Android and it's integration with other Google products, such as Maps and Firebase.  Users can create accounts, add items to the inventory, search others' items (via list or map), and view a data layer of the Portland edible tree map.  Additionally, users can contact each other to gather together, arrange pick-ups and drop-offs, and as well as, negotiate barters._
 
